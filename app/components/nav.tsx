@@ -7,8 +7,11 @@ const navItems = {
   '/blog': {
     name: 'blog',
   },
-  'https://vercel.com/templates/next.js/portfolio-starter-kit': {
-    name: 'deploy',
+  '/api-docs': {
+    name: 'api docs',
+  },
+  '/yunzdle': {
+    name: 'yunzdle',
   },
 }
 
