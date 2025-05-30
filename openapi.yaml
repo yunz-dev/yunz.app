@@ -1,0 +1,69 @@
+openapi: 3.0.0
+info:
+  title: Yunz API
+  version: 1.0.0
+  description: API documentation for Yunz's work schedule
+servers:
+  - url: /api
+paths:
+  /work/{limit}:
+    get:
+      summary: Get work schedule items
+      description: Returns a list of work schedule items up to the specified limit
+      parameters:
+        - in: path
+          name: limit
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+          description: Number of work items to return
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/WorkItem'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+components:
+  schemas:
+    WorkItem:
+      type: object
+      required:
+        - id
+        - date_str
+        - location
+        - time_range
+        - title_prefix
+      properties:
+        id:
+          type: integer
+          description: Unique identifier for the work item
+        date_str:
+          type: string
+          format: date
+          description: Date of work in DD/MM/YYYY format
+        location:
+          type: string
+          description: Location of work
+        time_range:
+          type: string
+          description: Time range of work in HH:MM-HH:MM format
+        title_prefix:
+          type: string
+          description: Prefix for the work title

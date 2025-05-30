@@ -1,17 +1,18 @@
-import React from 'react';
-import { Metadata } from 'next';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'API Documentation',
-  description: 'Documentation for Yunz API endpoints',
-};
+import SwaggerUI from 'swagger-ui-react';
+import 'swagger-ui-react/swagger-ui.css';
 
 export default function ApiDocs() {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold mb-8">API Documentation</h1>
       <div className="bg-gray-100 rounded-lg p-6">
-        <p className="text-gray-600">This page will contain detailed API documentation for all available endpoints.</p>
+        <SwaggerUI
+          url="/openapi.yaml"
+          docExpansion="list"
+          defaultModelsExpandDepth={-1}
+        />
       </div>
     </div>
   );
