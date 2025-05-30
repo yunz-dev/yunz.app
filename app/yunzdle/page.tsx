@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Yunzdle',
-  description: 'Yunz bundle management',
+  description: 'Better than Wordle',
 };
 
 export default function Yunzdle() {
@@ -11,7 +11,7 @@ export default function Yunzdle() {
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold tracking-tighter text-center mb-8">Yunzdle</h1>
       <div className="bg-gray-100 rounded-lg p-6">
-        <p className="text-gray-600">This page will contain Yunzdle bundle management functionality.</p>
+        <p className="text-gray-600">First Yunzdle Coming out tommorrow!! Stay Tuned :D </p>
       </div>
     </div>
   );
