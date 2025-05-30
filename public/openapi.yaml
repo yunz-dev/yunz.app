@@ -2,14 +2,14 @@ openapi: 3.0.0
 info:
   title: Yunz API
   version: 1.0.0
-  description: API documentation for Yunz's portfolio
+  description: API documentation for everything Yunz, from work, calendar, gaming and other stalking stuff idk mmeowmeowmeowmeowmeowmeowmeowmeowmeowmeoweow
 servers:
   - url: /api
 paths:
   /work/{limit}:
     get:
-      summary: Get work experience items
-      description: Returns a list of work experience items up to the specified limit
+      summary: Get shifts that yunz will have very soon!
+      description: Returns a list of work experience items up to the specified limit lalallalallallallalalallalalalallalala
       parameters:
         - in: path
           name: limit
