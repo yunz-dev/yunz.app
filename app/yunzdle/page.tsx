@@ -9,20 +9,24 @@ export default function Yunzdle() {
   const [input, setInput] = useState('');
   const [gameOver, setGameOver] = useState(false);
   const [score, setScore] = useState(0);
+  const [timerStarted, setTimerStarted] = useState(false); // New state to control timer start
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev <= 0) {
-          setGameOver(true);
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
+    let timer: NodeJS.Timeout;
+    if (timerStarted) { // Only start timer if timerStarted is true
+      timer = setInterval(() => {
+        setTimeLeft(prev => {
+          if (prev <= 0) {
+            setGameOver(true);
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+    }
 
     return () => clearInterval(timer);
-  }, []);
+  }, [timerStarted]); // Re-run effect when timerStarted changes
 
   const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value.toLowerCase());
@@ -30,6 +34,10 @@ export default function Yunzdle() {
 
   const handleSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault();
+    if (!timerStarted) { // Start timer on first submission
+      setTimerStarted(true);
+    }
+
     if (input === currentQuestion.answer) {
       setScore(prev => prev + 1);
       const nextIndex = questions.indexOf(currentQuestion) + 1;
@@ -40,7 +48,7 @@ export default function Yunzdle() {
         setGameOver(true);
       }
     }
-  }, [input, currentQuestion]);
+  }, [input, currentQuestion, timerStarted]); // Add timerStarted to dependency array
 
   if (gameOver) {
     return (
@@ -64,7 +72,10 @@ export default function Yunzdle() {
   return (
     <div className="container mx-auto px-4 py-8 min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800">
       <div className="text-center">
-        <h1 className="text-6xl font-bold tracking-tighter mb-8 text-white">Yunzdle</h1>
+        <h1 className="text-6xl font-bold tracking-tighter mb-4 text-white">Yunzdle</h1>
+        <p className="text-xl text-gray-300 mb-8">
+          How much do you think like Yunz? Find out by filling in the blanks!
+        </p>
         <div className="bg-gray-800 rounded-xl p-12 shadow-xl w-full max-w-2xl">
           <div className="mb-6">
             <div className="text-3xl font-bold text-gray-300 mb-4">Time Left: {timeLeft}s</div>
