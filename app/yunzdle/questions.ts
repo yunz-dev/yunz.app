@@ -4,14 +4,14 @@ export interface Question {
 }
 
 export const questions: Question[] = [
-  { clue: "Big _ _ _", answer: "mac" },
-  { clue: "Mini _ _ _ _ _", answer: "pecka" },
-  { clue: "meow _ _ _ _", answer: "meow" },
-  { clue: "_ _ _ _ _ maxxing", answer: "sleep" },
-  { clue: "I'm a good _ _ _", answer: "boy" },
-  { clue: "I feel important when I wear a _ _ _ _ _ _ _", answer: "lanyard" },
-  { clue: "Maximise _ _ _ _ _ _ _ intake", answer: "protein" },
-  { clue: "yunz _ _ _ _ (hint: sport)", answer: "runz" },
-  { clue: "sound of head (same word twice)", answer: "glug glug" },
+  { clue: "Nix _ _ _ _", answer: "book" },
+  { clue: "I'm going to _ _ _ _ _ you", answer: "touch" },
+  { clue: "woof _ _ _ _", answer: "woof" },
+  { clue: "snore _ _ _", answer: "lax" },
+  { clue: "good _ _ _ _", answer: "girl" },
+  { clue: "1, 2, 3, 4, I am a _ _ _ _ _ _ _ _", answer: "dinosaur" },
+  { clue: "tralalelo _ _ _ _ _ _ _", answer: "tralala" },
+  { clue: "yunz _ _ _ _ _ (hint: hevy acc)", answer: "gainz" },
+  { clue: "marco", answer: "polo" },
   { clue: "I love _ _ _", answer: "amy" }
 ];
