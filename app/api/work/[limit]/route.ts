@@ -15,7 +15,20 @@ export async function GET(
       );
     }
 
-    const items = workItems.slice(0, limit);
+    // Get current date in DD/MM/YYYY format
+    const currentDate = new Date().toLocaleDateString('en-GB');
+    
+    // Filter out past shifts
+    const futureItems = workItems.filter(item => {
+      // Parse DD/MM/YYYY format correctly
+      const [day, month, year] = item.date_str.split('/').map(Number);
+      const itemDate = new Date(year, month - 1, day);
+      const now = new Date();
+      return itemDate >= now;
+    });
+    
+    // Apply limit to filtered items
+    const items = futureItems.slice(0, limit);
     return NextResponse.json({ items });
   } catch (error) {
     return NextResponse.json(
