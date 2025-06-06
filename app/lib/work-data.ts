@@ -34,5 +34,33 @@ export const workItems: WorkItem[] = [
     location: "Krispy Kreme",
     time_range: "18:00-01:00",
     title_prefix: "Late Evening Shift at",
-  }
+  },
+  {
+    id: 7, // Assuming unique IDs are needed; incrementing from the last ID
+    date_str: "10/06/2025",
+    location: "Krispy Kreme",
+    time_range: "05:30-13:30",
+    title_prefix: "Early Morning Shift at",
+  },
+  {
+    id: 8,
+    date_str: "11/06/2025",
+    location: "Krispy Kreme",
+    time_range: "05:30-13:30",
+    title_prefix: "Early Morning Shift at",
+  },
+  {
+    id: 9,
+    date_str: "12/06/2025",
+    location: "Krispy Kreme",
+    time_range: "19:00-01:00",
+    title_prefix: "Late Evening Shift at", // Adjusted based on time range
+  },
+  {
+    id: 10,
+    date_str: "15/06/2025",
+    location: "Krispy Kreme",
+    time_range: "18:00-00:00",
+    title_prefix: "Evening Shift at",
+  },
 ];
