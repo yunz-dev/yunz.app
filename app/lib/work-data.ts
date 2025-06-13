@@ -63,4 +63,25 @@ export const workItems: WorkItem[] = [
     time_range: "18:00-00:00",
     title_prefix: "Evening Shift at",
   },
+  {
+    id: 11,
+    date_str: "17/06/2025",
+    location: "Krispy Kreme",
+    time_range: "05:30-13:30",
+    title_prefix: "Evening Shift at",
+  },
+  {
+    id: 12,
+    date_str: "18/06/2025",
+    location: "Krispy Kreme",
+    time_range: "05:30-13:30",
+    title_prefix: "Evening Shift at",
+  },
+  {
+    id: 13,
+    date_str: "19/06/2025",
+    location: "Krispy Kreme",
+    time_range: "18:00-01:00",
+    title_prefix: "Evening Shift at",
+  },
 ];
