@@ -113,4 +113,33 @@ export const workItems: WorkItem[] = [
     time_range: "17:30-01:00",
     title_prefix: "Late Evening Shift at",
   },
+  // New shifts added
+  {
+    id: 18,
+    date_str: "07/07/2025",
+    location: "Krispy Kreme",
+    time_range: "07:00-15:00",
+    title_prefix: "Day Shift at",
+  },
+  {
+    id: 19,
+    date_str: "08/07/2025",
+    location: "Krispy Kreme",
+    time_range: "16:00-00:00",
+    title_prefix: "Evening Shift at",
+  },
+  {
+    id: 20,
+    date_str: "10/07/2025",
+    location: "Krispy Kreme",
+    time_range: "17:30-01:00",
+    title_prefix: "Late Evening Shift at",
+  },
+  {
+    id: 21,
+    date_str: "13/07/2025",
+    location: "Krispy Kreme",
+    time_range: "16:30-00:00",
+    title_prefix: "Evening Shift at",
+  },
 ];
